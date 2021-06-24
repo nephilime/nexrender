@@ -25,6 +25,7 @@ module.exports = actionType => (job, settings) => {
             return Promise.reject(new Error(`Error loading ${actionType} module ${action.module}: ${err}`))
         });
     })).then(() => {
+        settings.logger.log(`[${job.uid}] applyed ${actionType} actions...`);
         return Promise.resolve(job)
     });
 }

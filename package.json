@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "lerna": "^3.21.0",
+    "lerna": "^3.22.1",
     "mocha": "^7.1.2",
     "pkg": "^4.4.1"
   }

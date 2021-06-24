@@ -112,12 +112,13 @@ const download = (job, settings, asset) => {
             }
 
             /* plain asset stream copy */
+
             const rd = fs.createReadStream(filepath)
             const wr = fs.createWriteStream(asset.dest)
 
             return new Promise(function(resolve, reject) {
                 rd.on('error', reject)
-                wr.on('error', reject)
+                wr.on('error', reject) //reject
                 wr.on('finish', resolve)
                 rd.pipe(wr);
             }).catch(function(error) {

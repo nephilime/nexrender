@@ -106,8 +106,9 @@ const render = (job, settings = {}) => {
 
     return Promise.resolve(job)
         .then(job => state(job, settings, setup, 'setup'))
-        .then(job => state(job, settings, download, 'download'))
+        //.then(job => state(job, settings, download, 'download'))
         .then(job => state(job, settings, prerender, 'prerender'))
+        .then(job => state(job, settings, download, 'download'))
         .then(job => state(job, settings, script, 'script'))
         .then(job => state(job, settings, dorender, 'dorender'))
         .then(job => state(job, settings, postrender, 'postrender'))
